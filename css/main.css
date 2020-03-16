@@ -1,0 +1,458 @@
+ @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600');
+
+body{
+    margin: 0;
+    font-family: 'Montserrat';
+}
+
+p, blockquote {
+    font-size: .9em; /*1 em = 16px*/
+    line-height: 1.6em; /*spatiul dintre linii*/
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    text-align: center;
+    padding: .8em 1.2em;
+}
+.logo{
+    width: 9%;
+    height: 9%;
+}
+
+.hide-mobile{
+    display:none;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu{
+    width: 25px;
+    margin-top: 45%;
+}
+
+.server{
+    width: 75%;
+    margin: 2em auto 2em auto;
+}
+
+h1, .subhead {
+    position: relative;
+    z-index: 3;
+}
+
+.subhead {
+    font-size: 1.1em;
+}
+
+.blue-container {
+    width: 100%;
+    background: #00C2FF;
+    color: #fff;
+    margin-top: 3%;
+    padding: 3em 0 2em;
+    border-top-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    transform: skewY(-2deg);
+}
+
+.blue-container ul{
+    transform: skewY(2deg);
+}
+
+.blue-container ul li{
+    padding: 1.5em;
+}
+
+.blue-container ul li p{
+    padding: 0 .2em;
+}
+
+.blue-container img{
+    width :14%;
+}
+
+.blue-container  ul li:nth-child(3) img {
+    width: 8%;
+}
+.gray-container {
+    background: #f6f6f6;
+    padding: 4em 0 2em;
+    margin-top: -4%;
+}
+
+.gray-container ul li:first-child{
+    margin-bottom: 2em;
+}
+
+figure {
+    margin:0;
+    padding: 0;
+ }
+
+ figcaption {
+     font-weight: bold;
+     color: #00c2ff;
+ }
+
+ h2 {
+     margin-top: 7%;
+ }
+
+ .cta{
+    background-color: #00CC80;
+    width: calc(70% - 1em);
+    display:block;
+    position: relative;
+    text-decoration: none;
+    color: white;
+    border-radius: 20px ;
+    padding: .5em  ;
+    margin: 3% auto 7%;
+    font-size: 1.5em;
+    z-index: 4;
+
+}
+
+.footer-container{
+    width: 100%;
+    background: #3d444a;
+    color: white;
+    padding: 3em 0;
+
+}
+
+ul.footer-links{
+    margin: 0 auto;
+}
+ul.footer-links li{
+    display: inline-block;
+}
+ul.footer-links li a{
+    color: #9d9d9d;
+    font-size: .8em;
+}
+
+nav ul{
+    position: fixed;
+    width: 60%;
+    top: 0;
+    right: 0;
+    text-align: left;
+    background: rgb(36,41,44);
+    height:100%;
+    z-index: 7;
+    padding-top: 3em;
+}
+
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    padding: 1em 2em;
+    background-color: rgb(54, 70, 78);
+}
+nav ul li a:hover{
+    background-color: rgb(77, 96, 105);
+}
+
+.exit-btn{
+    text-align: right;
+    margin-top: -1.3em;
+    margin-bottom: 1em;
+    padding: 0 1.4em;
+}
+
+.exit-btn img {
+    width: 15px;
+    cursor: pointer;
+}
+
+.games-list {
+    margin-top:4em;
+    margin-bottom: 8em;
+}
+
+.select-game {
+     background-color: #00C2FF;
+     padding: .7em 2em;
+     border-radius: 25px;
+     color: white;
+
+
+}
+
+#games{
+    border-radius: 20px;
+    padding: 0.2em;
+    padding-left: .4em;
+    background-color: white;
+    color: black;
+    border-color: white;
+}
+
+.open-book, .rules, .about-game{
+    font-size: 3em;
+}
+
+
+
+
+@media only screen and ( min-width: 650px) {
+    .server{
+        width: 30%;
+    }
+
+    h1{
+        font-size: 3em;
+        margin:0;
+    }
+
+
+
+    .subhead{
+        font-size: 1.4em;
+        margin-bottom: 12%;
+    }
+
+    .blue-container{
+        margin : 0;
+    }
+
+    .blue-container img{
+        width: 20%;
+    }
+
+    .blue-container  ul li:nth-child(3) img {
+        width: 11%;
+    }
+
+    .blue-container ul {
+        display: flex;
+        margin-top :-1em;
+        align-items: center;
+    }
+
+    .blue-container ul li{
+        margin-bottom: 0;
+        padding:.5em;
+    }
+
+    .blue-container ul li p{
+        padding: 0 .8em;
+    }
+
+    .gray-container ul
+     {
+         display: flex;
+         justify-content: center;
+         margin-top: 2em;
+     }
+
+     nav ul {
+         width:40%;
+     }
+}
+
+@media only screen and ( min-width: 875px) {
+
+    .container{
+        width: 75%;
+        margin:0 auto;
+    }
+
+    .blue-container{
+        margin:0 0 4% 0;
+    }
+
+    .logo{
+        width: 8%;
+        height: 8%;
+    }
+
+    .gray-container{
+        margin-top: -6em;
+    }
+
+    .gray-container ul {
+        margin : 8% 0 0 ;
+    }
+}
+
+@media only screen and ( min-width: 1024px) {
+
+    nav {
+        margin-top: 1.5em;
+    }
+
+    .logo{
+        width: 7%;
+        height: 7%;
+    }
+    #cez{
+        background-color:rgb(235, 232, 232); 
+        border-radius: 10%;
+        padding: 0 ;
+        margin-top: -.5em;
+        margin-bottom: -5em;
+        margin-left: -.8em;
+        text-align: center;
+        font-size: .9em;
+    }
+    .cta{
+        width: 50%;
+    }
+
+    .container{
+        width: 75%;
+        margin:0 auto;
+    }
+
+    .show-desktop {
+        display: block;
+        margin: 0 auto 13% auto;
+    }
+
+    .hide-desktop {
+        display: none;
+    }
+
+    .gray-container{
+
+        display: flex;
+        justify-content: center;
+        margin-top: -8em;
+        padding-top: 7em;
+    }
+
+    .blue-container ul li p, blockqute{
+        font-size: 1em;
+    }
+
+    nav ul {
+        position: inherit;
+        width: auto;
+        background: none;
+        height: auto;
+        display: flex;
+        padding-top: 0;
+    }
+
+    nav ul li {
+        display: flex;
+        float: left;
+    }
+
+    nav ul li i{
+        margin: 0;
+        margin-top: .3em;
+        color: #00C2FF;
+    }
+
+
+    nav ul li a {
+        color: black;
+        border-radius: 15px;
+        padding: .4em .6em;
+        margin: 0.3em .2em;
+        background-color: inherit;
+        text-align: center;
+        font-size: 1em;
+    }
+
+    .fas{
+        display: initial;
+    }
+
+     /* nav ul li:nth-child(5)  a{
+
+    }   */
+    nav ul li:nth-child(5)  a:hover{
+        background-color: white;
+
+    } 
+
+    nav ul li a:hover{
+        background-color: rgb(235, 232, 232);
+    }
+
+    .scroll{
+        width: 30px;
+        margin-top: -3em;
+        animation: move 1s infinite alternate;
+    }
+
+    .games-list {
+        margin-top:-4em;
+        margin-bottom: 8em;
+    }
+
+    .select-game {
+         background-color: #00C2FF;
+         padding: .7em 2em;
+         border-radius: 25px;
+         color: white;
+    }
+
+
+    .angle-down {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .angle-down {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    .angle-down ul{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #angle {
+        margin-left: -.7em;
+    }
+
+    #games{
+        border-radius: 20px;
+        padding: 0.2em;
+        padding-left: .4em;
+        background-color: white;
+        color: black;
+        border-color: white;
+    }
+
+    #cevas{
+        display: flex;
+        flex-direction: row;
+        font-size: 1em;
+        padding-right: 2em;
+    }
+    #cevas i{
+        padding-top: .5em;
+        padding-right: .4em;
+        margin-left: .3em;
+    }
+
+
+
+    @keyframes move {
+        from {
+            transform: translateY(0px);
+        }
+        to {
+            transform: translateY(20px);
+        }
+    }
+}
