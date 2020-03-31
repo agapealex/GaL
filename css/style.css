@@ -1,0 +1,19 @@
+.profile {
+    width: 15%;
+    margin: 1em auto;
+}
+
+.username{
+    position: relative;
+    font-size: 1.4em;
+}
+
+.details{
+    position: relative;
+    font-family: 'Lucida Sans Unicode';
+    font-size: 1.4em;
+}
+
+.clicked{
+    background: #cce5ff;
+}
