@@ -1,0 +1,132 @@
+﻿  
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Games Platform</title>
+    <script src="https://kit.fontawesome.com/d8a11682c0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main-admin.css">
+    
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="images/logo2.png" alt="amplifi logo" class="logo">
+
+            <nav>
+                <a href="#" class="hide-desktop">
+                    <img src="images/ham.svg" alt="toggle menu" class="menu" id="menu">
+                </a>
+                <ul class="show-desktop hide-mobile" id="nav">
+                    <li id="exit" class="exit-btn hide-desktop"><img src="images/exit.svg" alt="exit menu"></li>
+                    <li><a href="/" class="clicked">Home</a></li>
+                    <li><a href="/leader-board">Leader Board</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li >
+
+                        <div class=" hide-mobile show-desktop angle-down " >
+                            <div id="cevas">
+                                <a>
+                                    <i class="fas fa-user-tie"></i>
+                                    me
+                                </a>
+                                <i class="fas fa-angle-down" id="angle" ></i>
+                            </div>
+                            <div class="hide-mobile " id="cez">
+                                <ul>
+                                    <li><a href="/my-profile">My profile</a></li>
+                                    <li><a href="login.html">Logout</a></li>
+                                </ul>
+                            </div>
+                         </div>
+                        <a href="/my-profile" class="hide-desktop">
+                            My profile
+                            <i class="fas fa-cogs"></i>
+                        </a>
+                    </li>
+                    <li class="hide-desktop">
+                        <a href="login.html" >Logout</a>
+                    </li>
+
+                </ul>
+            </nav>
+        </header>
+		<section>
+			<img src="images/server.png" alt="server graphic" class="server">
+
+			<h1>The gaming world</h1>
+			<p class="subhead">Learn with us about games</p>
+			<img src="images/scroll.svg" alt="scroll down" class="scroll hide-mobile show-desktop">
+			<div class="games-list">
+				<div class="select-game">
+					<label for="games">Choose a game:</label>
+					<select id="games" onchange="getValuesGame(this.value)">
+						<option value="">Please select</option>
+
+					</select>
+				</div>
+			</div>
+		</section>
+	</div>
+	<div class="blue-container">
+		<div class="container">
+			<div class="articles">
+				<article>
+					<i class="fas fa-newspaper about-game"></i>
+					<h2>About Game</h2>
+					<p id="about-current-game">Please select a game to show its details. Thanks!</p>
+				</article>
+				<article>
+					<i class="fas fa-pencil-ruler rules"></i>
+					<h2>Rules</h2>
+					<p id="rules-current-game">Please select a game to show its rules. Thanks!</p>
+					
+				</article>
+				<article>
+					<i class="fas fa-book-reader open-book"></i>
+					<h2>History</h2>
+					<p id="history-current-game">Please select a game to show its history. Thanks!</p>
+				</article>
+			</div>
+			<br>
+			<div id="div-read-more-currentGame" >
+				<a id="read-more-currentGame" class="articles"></a>
+			</div>
+		</div>
+	</div>
+
+	<div class="container ">
+		<h2>Test your knowledge! Please select the difficulty.</h2>
+
+		<select  onchange="EnableGetStarted(this.value)">
+			<option value="">Please select</option>
+			<option value="1">Easy</option>
+			<option value="2">Medium</option>
+			<option value="3">Hard</option>
+		</select>
+
+		<a href="#" class="cta cursorOff" id="getStarted">Get Started</a>
+		<a href="/documentation" class="cta " >Go to documentation</a>
+
+
+	</div>
+	<footer>
+		<div class="footer-container">
+			<div class="container">
+				<p class="address">Melrose Place, 90210<br>USA</p>
+				<ul class="footer-links">
+					<li><a href="#">Terms of Services</a></li>
+					<li><a href="#">Privacy Policy</a></li>
+				</ul>
+
+			</div>
+		</div>
+	</footer>
+
+	<script src="../js/me.js"></script>
+	<script src="../js/home.js"></script>
+
+</body>
+</html>

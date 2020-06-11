@@ -1,0 +1,97 @@
+.add-game{
+    background-color: red;
+}
+.table{
+    margin: 2em auto 0 auto;
+    font-size: .9em;
+    min-width: 90%;
+    border-collapse: collapse;  /*daca scoti porprietatea asta atunci va aparea un fel de distanta intre elemente */
+}
+.clicked{
+    background: #cce5ff;
+}
+.cursorOff {
+	
+	pointer-events: none;
+}
+
+th, td {
+	padding: 1.6em 1.5em;
+} 
+td.td-cls{
+      margin-top: 1.5em ; 
+}
+thead tr{
+    
+    background-color: rgb(172, 172, 172);
+}
+
+tbody tr:nth-of-type(even)
+{
+    background-color: #f3f3f3;
+}
+tbody tr:nth-of-type(odd)
+{
+    background-color: white;
+}
+
+td a{
+    padding: 1em;
+}
+
+.default-img{
+    height: 6em;
+    width: auto;
+}
+
+@media only screen and ( min-width: 1024px) {
+    .container{
+        position: relative;
+    }
+
+    .add-game{
+        background-color: red;
+    }
+    .table{
+        margin: 2em auto 0 auto;
+        font-size: .9em;
+        min-width: 90%;
+        border-collapse: collapse;  /*daca scoti porprietatea asta atunci va aparea un fel de distanta intre elemente */
+    }
+
+    th,td{
+        text-align: left;
+        padding: .7em 2.5em;
+    } 
+    thead tr{
+        background-color: rgb(172, 172, 172);
+    }
+
+    tbody tr:nth-of-type(even)
+    {
+        background-color: #f3f3f3;
+    }
+    tbody tr:nth-of-type(odd)
+    {
+        background-color: white;
+    }
+
+    tbody tr{
+        vertical-align: middle;
+    }
+
+
+    td a{
+        padding: 1em;
+    }
+
+    .default-img{
+        height: 4em;
+        width: auto;
+    }
+
+    .cls-table{
+        position: relative;
+        min-height: 70vh;
+    }
+}

@@ -1,0 +1,181 @@
+.profile {
+    width: 15%;
+    margin: 1em auto;
+}
+
+.username{
+    font-size: 1.4em;
+}
+
+.details{
+    position: relative;
+    font-family: 'Lucida Sans Unicode';
+    font-size: 1.4em;
+}
+
+.clicked{
+    background: #cce5ff;
+}
+
+.userclass-parent{
+	display:flex;
+	flex-direction:column;
+	justify-content: center;
+	text-align:center;
+}
+.userclass{
+	display:flex;
+	float:left;
+	
+}
+
+.iconClass {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+p{
+    font-size: 2em;
+}
+
+.contactPh {
+    width: 50%;
+    margin: 2em auto 2em auto;
+}
+
+.acount-created-container{
+    width: 40%;
+    margin: 0 auto;
+    margin-top: 5%;
+    padding: 3em;
+    background-color: rgb(255, 255, 255,0.4);
+    text-align: center;
+}
+.goToLogin{
+    padding: 1em;
+    background-color: black;
+    color: white;
+}
+
+
+
+@media only screen and ( min-width: 300px) {
+    .profile {
+        width: 10%;
+        margin: 1em auto;
+    }
+    p{
+        font-size: 1em;
+    }
+
+    .username{
+        font-size: 1em;
+    }
+
+    .details{
+        position: relative;
+        font-family: 'Lucida Sans Unicode';
+        font-size: 1em;
+    }
+
+    .clicked{
+        background: #cce5ff;
+    }
+
+    iconClass {
+      text-decoration: none;
+      font-size: 16px;
+      color: black;
+    }
+}
+
+@media only screen and ( min-width: 650px) {
+    .profile {
+        width: 10%;
+        margin: 1.2em auto;
+    }
+    p{
+        font-size: 1.2em;
+    }
+
+    .username{
+        font-size: 1.2em;
+    }
+
+    .details{
+        position: relative;
+        font-family: 'Lucida Sans Unicode';
+        font-size: 1.2em;
+    }
+
+    .clicked{
+        background: #cce5ff;
+    }
+
+    iconClass {
+      text-decoration: none;
+      font-size: 24px;
+      color: black;
+    }
+}
+
+
+@media only screen and ( min-width: 875px) {
+     .profile {
+        width: 10%;
+        margin: 1.4em auto;
+    }
+    p{
+        font-size: 1.4em;
+    }
+
+    .username{
+        font-size: 1.4em;
+    }
+
+    .details{
+        position: relative;
+        font-family: 'Lucida Sans Unicode';
+        font-size: 1.4em;
+    }
+
+    .clicked{
+        background: #cce5ff;
+    }
+
+    .iconClass {
+      text-decoration: none;
+      font-size: 24px;
+      color: black;
+    }
+}
+
+@media only screen and ( min-width: 1024px) {
+    .profile {
+        width: 10%;
+        margin: 1.4em auto;
+    }
+    p{
+        font-size: 1.4em;
+    }
+
+    .username{
+        font-size: 1.4em;
+    }
+
+    .details{
+        position: relative;
+        font-family: 'Lucida Sans Unicode';
+        font-size: 1.4em;
+    }
+
+    .clicked{
+        background: #cce5ff;
+    }
+
+    .iconClass {
+      text-decoration: none;
+      font-size: 24px;
+      color: black;
+    }
+}
