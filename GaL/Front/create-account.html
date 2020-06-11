@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Games Platform</title>
+    <script src="https://kit.fontawesome.com/d8a11682c0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/main.css">
+    
+</head>
+<body id="login-body">
+    <div class="login-container">
+	    <img src="images/logo2.png" alt="amplifi logo" class="logo-login">
+        <h2>Create Account</h2>
+        <form class="login"  action="/account-created" method="post">
+                <label for="uname">User-name</label>
+                <input type="text" id="uname" placeholder="Username" name="uname" required>
+				
+                <label for="fname">First-name</label>
+                <input type="text" id="fname" placeholder="First-name" name="fname" required>			
+
+                <label for="lname">Last-name</label>
+                <input type="text" id="lname" placeholder="Last-name" name="lname" required>
+				
+				<label for="localityname">Locality</label>
+                <input type="text" id="localityname" placeholder="Enter localityname" name="localityname" required>
+				
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="email" name="email" required>				
+
+                <label for="psw">Password</label>
+                <input type="password" id="psw" placeholder="Enter your password" name="psw" required>
+			
+                <button type="submit" class="greenBtn" >Create</button>
+
+        </form>
+	</div>
+</body>
+</html>

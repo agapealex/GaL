@@ -1,0 +1,86 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contact</title>
+    <script src="https://kit.fontawesome.com/d8a11682c0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="container">
+        <header>
+            <img src="images/logo2.png" alt="amplifi logo" class="logo">
+
+			<nav>
+				<a href="#" class="hide-desktop">
+					<img src="images/ham.svg" alt="toggle menu" class="menu" id="menu">
+				</a>
+				<ul class="show-desktop hide-mobile" id="nav">
+					<li id="exit" class="exit-btn hide-desktop"><img src="images/exit.svg" alt="exit menu"></li>
+					<li><a href="/" >Home</a></li>
+					<li><a href="/list-games">List-Games</a></li>
+					<li><a href="/leader-board">Leader Board</a></li>
+					<li><a href="/contact" class="clicked">Contact</a></li>
+					<li>
+						<div class=" hide-mobile show-desktop angle-down ">
+							<div id="cevas">
+								<a>
+									<i class="fas fa-user-tie"></i>
+									me
+								</a>
+								<i class="fas fa-angle-down" id="angle"></i>
+							</div>
+							<div class="hide-mobile " id="cez">
+								<ul>
+									<li><a href="/my-profile">My profile</a></li>
+									<li><a href="/login">Logout</a></li>
+								</ul>
+							</div>
+						</div>
+						<a href="/my-profile" class="hide-desktop">
+							My profile
+							<i class="fas fa-cogs"></i>
+						</a>
+					</li>
+					<li class="hide-desktop">
+						<a href="/login">Logout</a>
+					</li>
+
+				</ul>
+			</nav>
+        </header>
+        <section>
+            <img src="images/server.png" alt="server graphic" class="server">
+            <h1>Contact</h1>       
+            <p class="username"><i class="fa fa-phone-square"></i> +40751728367</p>
+            <p><i class="iconClass fa fa-envelope"></i><b> Email:</b> thegamingworldcontact@yahoo.com"</p>
+        </section>
+    </div>
+
+    <script>
+
+        var menu = document.getElementById('menu');
+        var nav = document.getElementById('nav');
+        var exit = document.getElementById('exit');
+        var angle =document.getElementById('angle');
+
+        menu.addEventListener('click',function(e){
+            nav.classList.toggle('hide-mobile');
+            e.preventDefault();
+        });
+
+        exit.addEventListener('click',function(e){
+            nav.classList.add('hide-mobile');
+            e.preventDefault();
+        })
+
+        angle.addEventListener('click', function(e){
+            cez.classList.toggle('show-desktop');
+            e.preventDefault();
+        })
+        
+    </script>
+</body>
+</html>

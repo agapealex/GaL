@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>GaL</title>
+	<link rel="stylesheet" href="css/scholarly.min.css">
+    <script src="js/scholarly.min.js"></script>
+  </head>
+  <body prefix="schema: http://schema.org">
+    <header>
+		<h1>Game Playing Learning Monitor</h1>
+        <h2>Ghid de utilizare</h2>
+	</header>
+      <div role="contentinfo">
+
+      </div>
+	<section id="introduction" role="doc-introduction">     
+	    <h2>Introducere</h2>
+	    <p>Sa se realizeze o aplicatie Web menita a oferi suport pentru invatarea componentelor principale ale unui joc (clasic sau electronic), la alegere – a se studia si <a role="doc-biblioref">Outline of games</a></p>
+	    <p>Se vor lua in consideratie:</p>
+	    <ul>
+		    <li>scopul</li>
+		    <li>categoria</li>
+		    <li>regulile</li>
+		    <li>provocarile</li>
+		    <li>manierele de interactiune cu jocul respectiv.</li>
+	    </ul>   
+	    <p>Sistemul va monitoriza progresul inregistrat de fiecare utilizator in procesul de invatare, eventual structurata pe niveluri de dificultate. </p>
+        <p>Se va genera, de asemenea, un clasament al celor mai de succes utilizatori, pentru fiecare categorie de jocuri, disponibil si ca flux de date RSS.</p>
+	    <p>Bonus: realizarea unui mini-joc de testare a cunostintelor dobandite pe baza sistemului Web implementat.</p>
+	</section>
+
+      <section id="pages">
+          <h2>Paginile Web</h2>
+          <p>Aplicatia Web dezvoltata pe baza cerintei prezentate mai sus este alcatuita din urmatoarele pagini Web:</p>
+          <ul>
+              <li>Create Account</li>
+              <li>Login</li>
+              <li>Home</li>
+              <li>My Profile</li>
+              <li>List Games</li>
+              <li>Leader Board</li>
+              <li>Contact</li>
+          </ul>
+     </section>
+      <section id="description">
+          <h2>GaL - descriere aplicatie</h2>
+          <p>Aplicatia Web numita GaL este prevazuta pentru invatarea regulilor unui joc si de asemenea pentru testarea cunostintelor. GaL mai pune la dispozitie si un clasament generat in urma testarii cunostintelor despre jocurile alese.</p>
+          <section id="createAccount">
+              <h3>Create account</h3>
+              <img src="images/createAccount.jpg" width="400" height="500" alt="Create Account">
+              <p>Crearea unui cont nou se realizeaza din pagina "Creare Account", prin intermediul unui formular, completat de catre utilizator cu datele sale. Dupa completarea datelor, cu ajutorul butonului "Create Account", finalizam procesul de creare a noului cont.</p>
+              <p>Daca contul a fost creat cu succes vom fi redirectionati pe o pagina noua, pe care vom putea vedea urmatorul mesaj: "Account created." si de asemenea, vom putea accesa pagina de logare, prin apasarea butonului "Go to Login".</p>
+              <img src="images/account-created.jpg" width="400" height="300" alt="Account Created">
+          </section>
+          <section id="login">
+              <h3>Login</h3>
+              <img src="images/login.jpg" width="400" height="500" alt="Login">
+              <p>Dupa crearea unui cont, ne vom putea loga folosind userul si parola.</p>
+              <p>Pe pagina de logare avem, de asemenea si un buton catre pagina de creare a unui cont, pentru noii utilizatori.</p>
+              <p>Exista 2 tipuri de conturi, bazate pe drepturile asupra aplicatiei: </p>
+              <ol>
+                  <li>administrator</li>
+                  <li>utilizator</li>
+              </ol>
+              <section id="admin">
+                  <h3>Logare administrator</h3>
+                  <section id="home-admin">
+                      <h4>Pagina "Home" dupa logarea ca administrator</h4>
+                      <img src="images/home-admin.jpg" width="800" height="450" alt="Home">
+                      <p>Dupa logarea ca administrator, avem acces de pe pagina "Home" si la lista jocurilor.</p>
+                  </section>
+                  <section id="listGames">
+                      <h4>List Games</h4>
+                      <img src="images/list-games.jpg" width="800" height="350" alt="List Games">
+                      <p>Pagina "List Games" contine un tabel cu toate jocurile disponibile in baza de date. Aceasta pagina este vizibila doar pentru administrator. </p>
+                      <p>Tabelul este format din urmatoarele coloane:</p>
+                      <ul>
+                          <li>Id: numar unic care reprezinta identificatorul jocului in baza de date.</li>
+                          <li>Name: numele jocului</li>
+                      </ul>
+                      <p>Din pagina cu lista jocurilor, administratorul poate sterge sau modifica jocurile si de asemenea, poate viziona detaliile specifice unui joc prin apasarea butonului "Details", care ne va directiona pe o noua pagina.</p>
+                  </section>
+                  <section id="details">
+                      <h4>Details</h4>
+                      <img src="images/details.jpg" width="800" height="450" alt="DEtails">
+                  </section>
+              </section>
+              <section id="user">
+                  <h3>Logare utilizator</h3>
+                  <section id="home-user">
+                      <h4>Pagina "Home" dupa logarea ca utilizator</h4>
+                      <img src="images/Home-user.jpg" width="800" height="450" alt="Home">
+                      <p>Dupa logarea ca utilizator, din pagina "Home" lipseste butonul pentru lista de jocuri, specifica administratorului.</p>
+                  </section>
+              </section>
+          </section>
+          <section id="home">
+              <h3>Home</h3>
+              <p>Pagina "Home" reprezinta pagina principala, vizibila dupa logare, ca administrator sau utilizator.</p>
+              <p>Pe aceasta pagina avem un "drop down list" pentru alegerea jocului dorit.</p>   
+              <img src="images/dropdownlist.jpg" width="800" height="450" alt="Games">
+              <p>Dupa alegerea jocului, utilizatorul are de asemenea acces la detalii, prin intermediul link-ului "Read more..", pentru urmatoarele campuri specifice unui joc: </p>
+              <ul>
+                  <li>About Game</li>
+                  <li>Rules</li>
+                  <li>History</li>
+              </ul>
+              <p>Pe pagina de "Home", avem de asemenea si butonul pentru inceperea testului bazat pe cunostintele acumulate in urma invatarii regulilor jocului ales din lista prezentata mai sus.</p>
+              <img src="images/knowledges.jpg" width="800" height="250" alt="Knowledges">
+          </section>
+		  <section id="leaderBoard">
+		  	<h3>Leader Board</h3>
+		  	<img src="images/leader-board.jpg" width="800" height="400" alt="Leader Board">
+		  	<p>Pagina "Leader board" contine un tabel cu clasamentul in urma testarii cunostintelor despre regulile si comportamentul jocurilor.</p>
+		  	<p>Leaderul clasamentului este utilizatorul care a acumulat cel ami amre numar de puncte in urma testelor.</p>
+		  </section>
+          <section>
+              <h3>Contact</h3>
+              <img src="images/contact.jpg" width="800" height="450" alt="Contact">
+              <p>Pagina "Contact" contine date de contact ale administratorilor aplicatiei Web GaL.</p>
+          </section>
+          <section id="menu">
+              <h3>Meniul "me"</h3>
+              <p>Pentru vizionarea profilul personal sau logout, trebuie sa accesam meniul "me".</p>
+              <img src="images/Home-menu.jpg" width="800" height="450" alt="Menu">              
+              <section id="myProfile">
+                  <h4>My Profile</h4>
+                  <img src="images/my-profile.jpg" width="800" height="450" alt="My profile">                  
+                  <p>Pagina "My profile" contine datele utilizatorului logat, care au fost completate in formularul de creare a contului.</p>
+              </section>
+              <section id="logout">
+                  <h4>Logout</h4>
+                  <p>Butonul "Logout" este folosit de utilizator atunci cand doreste sa se deconecteze de pe aplicatie.</p>
+                  <p>Dupa deconectare, utilizatorul va fi directionat pe pagina "Login".</p>
+                  <p></p>
+              </section>
+          </section>
+      </section>
+</body>
+</html>
