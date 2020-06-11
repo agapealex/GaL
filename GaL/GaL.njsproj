@@ -1,0 +1,136 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <Name>GaL</Name>
+    <RootNamespace>GaL</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>89596156-d26e-43e7-94c0-df805b07c717</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>app.js</StartupFile>
+    <StartWebBrowser>False</StartWebBrowser>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <StartWebBrowser>false</StartWebBrowser>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="API\apiLeaderBoard.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="API\apiProfile.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="API\apiTest.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="API\user.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="app.js" />
+    <Content Include="Core\db.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Core\httpMsgs.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Core\server.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="API\apiGame.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Front\admin-index.html" />
+    <Content Include="Front\css\main-admin.css" />
+    <Content Include="Front\css\main.css" />
+    <Content Include="Front\details-game.html" />
+    <Content Include="Front\history.html" />
+    <Content Include="Front\images\a.jpg" />
+    <Content Include="Front\images\b.jpg" />
+    <Content Include="Front\images\background.txt" />
+    <Content Include="Front\images\c.jpg" />
+    <Content Include="Front\images\d.jpg" />
+    <Content Include="Front\images\exit.svg" />
+    <Content Include="Front\images\ham.svg" />
+    <Content Include="Front\images\icon-1.svg" />
+    <Content Include="Front\images\icon-2.svg" />
+    <Content Include="Front\images\icon-3.svg" />
+    <Content Include="Front\images\logo-white.svg" />
+    <Content Include="Front\images\logo2.png" />
+    <Content Include="Front\images\scroll.svg" />
+    <Content Include="Front\images\server.png" />
+    <Content Include="Front\images\user1.png" />
+    <Content Include="Front\images\user2.png" />
+    <Content Include="Front\index.html" />
+    <Content Include="Front\js\crudGame.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Front\js\detailsGame.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Front\js\edit.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Front\js\home.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Front\js\leader-board.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Front\js\me.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Front\js\script.js" />
+    <Content Include="Front\js\user.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Front\list-games.html" />
+    <Content Include="Front\login.html" />
+    <Content Include="Front\README.md" />
+    <Content Include="Front\rules.html" />
+    <Content Include="Modules\gameModule.js" />
+    <Content Include="Modules\leaderBoardModule.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Modules\profileModule.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Modules\questionModule.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Modules\userModule.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="package.json" />
+    <Content Include="README.md" />
+    <Content Include="settings.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Modules\loadFs.js">
+      <SubType>Code</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Core\" />
+    <Folder Include="Front\" />
+    <Folder Include="Front\css\" />
+    <Folder Include="Front\images\" />
+    <Folder Include="Front\js\" />
+    <Folder Include="API\" />
+    <Folder Include="Modules\" />
+  </ItemGroup>
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
+</Project>
