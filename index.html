@@ -1,162 +1,254 @@
-  
-<!doctype html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="ro">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Games Platform</title>
-    <script src="https://kit.fontawesome.com/d8a11682c0.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/style.css"> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>GaL</title>
+    <link rel="stylesheet" href="css/scholarly.min.css">
+    <script src="js/scholarly.min.js"></script>
 </head>
-<body>
-    <div class="container">
-        <header>
-            <img src="images/logo2.png" alt="amplifi logo" class="logo">
+<body prefix="schema: http://schema.org">
+    <header>
+        <h1>Game Playing Learning Monitor</h1>
+        <h2>Evolutia proiectului</h2>
+    </header>
+    <div role="contentinfo">
 
-            <nav>
-                <a href="#" class="hide-desktop">
-                    <img src="images/ham.svg" alt="toggle menu" class="menu" id="menu">
-                </a>
-                <ul class="show-desktop hide-mobile" id="nav">
-                    <li id="exit" class="exit-btn hide-desktop"><img src="images/exit.svg" alt="exit menu"></li>
-                    <li><a class="clicked" href="index.html">Home</a></li>
-                    <li><a href="#">Leader Board</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li >
+    </div>
+    <section id="introduction" role="doc-introduction">
+        <h2>Introducere</h2>
+        <p>Sa se realizeze o aplicatie Web menita a oferi suport pentru invatarea componentelor principale ale unui joc (clasic sau electronic), la alegere – a se studia si <a role="doc-biblioref">Outline of games</a></p>
+        <p>Se vor lua in consideratie:</p>
+        <ul>
+            <li>scopul</li>
+            <li>categoria</li>
+            <li>regulile</li>
+            <li>provocarile</li>
+            <li>manierele de interactiune cu jocul respectiv.</li>
+        </ul>
+        <p>Sistemul va monitoriza progresul inregistrat de fiecare utilizator in procesul de invatare, eventual structurata pe niveluri de dificultate. </p>
+        <p>Se va genera, de asemenea, un clasament al celor mai de succes utilizatori, pentru fiecare categorie de jocuri, disponibil si ca flux de date RSS.</p>
+        <p>Bonus: realizarea unui mini-joc de testare a cunostintelor dobandite pe baza sistemului Web implementat.</p>
+    </section>
+    <section id="interface">
+        <h2>Interfata si interactiunea cu utilizatorul</h2>
+        <p>In proiectarea si implementarea interfetei Web responsive, GaL, am folosit limbajul HTML(HyperText Markup Language) pentru crearea paginilor web si limbajul CSS (Cascading Style Sheets) pentru editarea aspectului şi pentru formatarea acestora.</p>
 
-                        <div class=" hide-mobile show-desktop angle-down " >
-                            <div id="cevas">
-                                <a>
-                                    <i class="fas fa-user-tie"></i>
-                                    me
-                                </a>
-                                <i class="fas fa-angle-down" id="angle" ></i>
-                            </div>
-                            <div class="hide-mobile " id="cez">
-                                <ul>
-                                    <li><a href="MyProfile.html">My Profile</a></li>
-                                    <li><a href="#">Logout</a></li>
-                                </ul>
-                            </div>
-                         </div>
-                        <a href="#" class="hide-desktop">
-                            My account
-                            <i class="fas fa-cogs"></i>
-                        </a>
-                    </li>
-                    <li class="hide-desktop">
-                        <a href="#" >Logout</a>
-                    </li>
-
-                </ul>
-            </nav>
-        </header>
-        <section>
-            <img src="images/server.png" alt="server graphic" class="server">
-
-            <h1>The gaming world</h1>
-            <p class="subhead">Learn with us about games</p>
-            <div class="games-list">
-                <a class="select-game">
-                <label for="games">Choose a game:</label>
-                <select id="games">
-                <option value="">Please select</option>
-                <option value="mario">Mario</option>
-                <option value="flappy">FlappyBird</option>
-                <option value="gta">GTA</option>
-                <option value="counter">Counter Strike</option>
-                </select>
-                </a>
-            </div>  
-            <img src="images/scroll.svg" alt="scroll down" class="scroll hide-mobile show-desktop">
+    </section>
+    <section id="architecture">
+        <h2>Arhitectura aplicatiei Web</h2>
+        <p>Datorita faptului ca este o aplicatie Web se foloseste protocolul HTTP, pentru transportul de date intre server si client.</p>
+        <section id="REST">
+            <h3>Arhitectura REST</h3>
+            <p>Constrangerile arhitecturii REST (Representational state transfer) sunt urmatoarele:</p>
+            <ol>
+                <li>O aplicatie Web este stateless. Aceasta constrangere arata faptul ca fiecare request este independent(fara a avea legatura cu request-urile anterioare).</li>
+                <li>Legatura client-server, care sunt legate prin protocol HTTP.</li>
+                <li>
+                    Uniform-interface, care are ca scop simplificarea si decuplarea arhitecturii, ce permite fiecarei parti sa evolueze independent. Uniform-interface are la randul ei 4 constrangeri:
+                    <ul>
+                        <li>identificarea resurselor prin URL;</li>
+                        <li>manipularea resurselor prin reprezentari(un client detine suficiente informatii pentru a realiza prin interfata, modificarea, stergerea starii resurselor);</li>
+                        <li>mesajele autodescriptive(fiecare request fiind stateless, trebuie sa contina toate detaliile ce descriu modul de procesare al mesajului);</li>
+                        <li>HATEOAS(Hypermedia As The Engine Of Application State, adica serverul poate sa raspuunda cu text, ce poate sa includa hyperlink-uri la alte resurse disponibile in prezent);</li>
+                    </ul>
+                </li>
+                <li>Leyerd System(fiecare leyer are acces doar la un leyer apropiat) se refera la faptul ca un client poate avea acces la un task ce se bazeaza pe un alt task fara sa inteleaga ce se intampla in spate si cum se implementeaza. Practic, clientul acceseaza un  server ce acceseaza un alt server din baza de date fara ca browserul sa stie acest lucru.</li>
+                <li>Cacheable/Non-cacheable (fiecare response trebuie sa fie marcat ca cacheable/non-cacheable.)</li>
+            </ol>
+            <p>Informatiile de la un request la altul se vor stoca in header, care contine verbul HTTP, URL, versiunea de http folosita.</p>
+            <p>Serverul trebuie sa implementeze metodele de tip CRUD (CREATE, READ, UPDATE, DELETE) ce corespund verbelor HTTP (GET, POST, PUT, DELETE)</p>
+            <p>Front-End-ul functioneaza independent fata de Back-End. Pentru a fi posibil acest lucru am folosit API, iar pentru preluareaa datele de pe server am utilizat "fetch".</p>
+            <p>API ne ajuta sa oferim date pentru orice tip de dispozitiv, practic acest lucru, demonstreaza faptul ca serverul lucreaza independent.</p>
         </section>
-    </div>
-    <div class="blue-container">
-        <div class="container">
-            <ul>
-                <li>
-                    <i class="fas fa-newspaper about-game"></i>
-                    <h2>About Game</h2>
-                    <p>This article is about the online encyclopedia. For Wikipedia's home page, see Main Page. For Wikipedia's visitor introduction, see Wikipedia:About. For other uses, see Wikipedia (disambiguation).</p>
-                    <p>Reade more...</p>
-                </li>
-                <li>
-                    
-                    <i class="fas fa-pencil-ruler rules"></i>
-                    <h2>Rules</h2>
-                    <p>This article is about the online encyclopedia. For Wikipedia's home page, see Main Page. For Wikipedia's visitor introduction, see Wikipedia:About. For other uses, see Wikipedia (disambiguation).</p>
-                    <p>Reade more...</p>
-                </li>
-                <li>
-                    <i class="fas fa-book-reader open-book"></i>
-                    <h2>History</h2>
-                    <p>This article is about the online encyclopedia. For Wikipedia's home page, see Main Page. For Wikipedia's visitor introduction, see Wikipedia:About. For other uses, see Wikipedia (disambiguation).</p>
-                    <p>Reade more...</p>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="gray-container">
-        <div class="container">
-            <ul>
-                <li>
-                    <img src="images/user1.png" alt="user testimonial picture">
-                    <blockquote>"This article is about the online encyclopedia. For Wikipedia's home page, see Main Page."</blockquote>
-                    <figcaption>-Jane Doe</figcaption>
-                </li>
-                <li>
-                    <img src="images/user2.png" alt="user testimonial picture">
-                    <blockquote>"This article is about the online encyclopedia. For Wikipedia's home page, see Main Page." </blockquote>
-                    <figcaption>- John Doe</figcaption>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="container">
-        <h2>Test your knowledge for this game!</h2>
-        <a href="#" class="cta">Get Started</a>
-    </div>
-    <footer>
-        <div class="footer-container">
-            <div class="container">
-                <!-- <a href="#">
-                    <img src="images/logo.jpg" class="logo" alt="logo">
-                </a> -->
-                <p class="address">Melrose Place, 90210<br>USA</p>
-                <ul class="footer-links">
-                    <li><a href="#">Terms of Services</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
+        <section id="front-end">
+            <h3>Front-end</h3>
+            <section id="html">
+                <h4>HTML</h4>
+                <p><b>HyperText Markup Language (HTML)</b> este un limbaj de marcare utilizat pentru crearea paginilor web ce pot fi afisate intr-un browser (sau navigator).</p>
+                <p>Limbajul Html are ca scop crearea structurii aplicatiei Web.</p>
+            </section>
+            <section id="css">
+                <h4>CSS</h4>
+                <p><b>CSS (Cascading Style Sheets)</b> este un standard pentru formatarea elementelor unui document HTML. Stilurile se pot atasa elementelor HTML prin intermediul unor fisiere externe sau in cadrul documentului, prin elementul <code>&lt;style&gt; </code> si/sau atributul style.</p>
+                <p>Limbajul Css are ca scop principal editarea aspectului si infrumusetarea interfetei. </p>
+            </section>
+            <section id="javascript">
+                <h4>Javascript</h4>
+                <p><b>JavaScript (JS)</b> este un limbaj de programare orientat obiect folosit mai ales pentru introducerea unor functionalitati în paginile web, codul JavaScript din aceste pagini fiind rulat de catre browser. </p>
+                <p>Pentru a face interfata interactiva, am folosit de asemenea si Javascript.</p>
+                <p>Un avantaj principal in folosirea limbajului Javascript il reprezinta apelul asincron la server fara a da refresh paginii Web. </p>
+                <p>Dupa ce se realizeaza fetch-ul, datele respective vor fi incluse in interiorul tagurilor selectate cu:</p>
+                <ul>
+                    <li><code>document.querySelector();</code></li>
+                    <li><code>document.getElementById();</code></li>
+                    <li><code>document.getElementByClassName()</code></li>
                 </ul>
+                <p>Dupa ce s-au selectat elementele HTML, poti adauga datele respective in elementul selectat cu <code>innerHtml</code>.</p>
+                <p>De asemenea poti adauga anumite atribute tag-urilor selectate. (de exemplu: id, class, onclick, .etc.)</p>
+                <p>Pentru preluareaa datele de pe server am utilizat <code>fetch()</code>.</p>
+                <p>Aceasta metoda de tip fetch () ofera o modalitate usoara si logica de a obtine resurse in mod asincron prin retea.</p>
+            </section>
+        </section>
+        <section id="back-end">
+            <h3>Back-End</h3>
+            <p>Pentru realizarea serverului am folosit limbajul NodeJS.</p>
+            <section id="nodejs">
+                <h4>NodeJS</h4>
+                <p>NodeJS este un mediu de de server open source si foloseste JavaScript pe server, de asemenea foloseste programare asincrona.</p>
+                <p>NodeJS se bazeaza pe Javascript pe partea de back-end. Din acest motiv, comunicarea cu front-end-ul este mult mai usoara.</p>
+            </section>
+            <section id="api">
+                <h4>API</h4>
+                <section id="dataBase">
+                    <h5>Baza de date</h5>
+                    <p>Pentru interogarea bazei de date am folosit sistemul de gestionare Microsoft SQL Server.</p>
+                    <pre>
+                    <code>var sqlDB = require("mssql")</code>
+              </pre>
+                    <p>In vederea manipularii bazei de date, am implementat functia "executeSql" care realizeaza conexiunea cu baza de date si executa un query, specific operatiunei necesare (CRUD).</p>
+                </section>
+                <section id="crud">
+                    <h5>Operatiunile CRUD</h5>
+                    <section id="post">
+                        <h6>CREATE</h6>
+                        <p>Operatiunea "CREATE" este folosita pentru adaugarea unui noi joc in baza de date.</p>
+                        <pre>
+<code>exports.addGame = function (req, resp, reqBody) {
+    try {
+        if (!reqBody) { throw new Error("Input not valid"); }
+        var data = JSON.parse(reqBody);
+        if (data) {
+            var sql = "INSERT INTO Games (Name, About, Rules, History) Values ";
+            sql += util.format("('%s','%s','%s','%s')", data.Name, data.About, data.Rules, data.History);
+            db.executeSql(sql, function (data, err) {
+                if (err) {
+                    httpMsgs.show500(req, resp, err);
+                } else {
+                    httpMsgs.send200(req,resp);
+                }
+            });
+        } else {
+            throw new Error("Input not valid");
+        }
+    }
+    catch (ex) {
+        httpMsgs.show500(req, resp, ex);
+    }
+};</code>
+                </pre>
+                    </section>
 
-            </div>
-        </div>
-    </footer>
-
-    <script>
-
-        var menu = document.getElementById('menu');
-        var nav = document.getElementById('nav');
-        var exit = document.getElementById('exit');
-        var angle =document.getElementById('angle');
-
-        menu.addEventListener('click',function(e){
-            nav.classList.toggle('hide-mobile');
-            e.preventDefault();
-        });
-
-        exit.addEventListener('click',function(e){
-            nav.classList.add('hide-mobile');
-            e.preventDefault();
-        })
-
-        angle.addEventListener('click', function(e){
-            cez.classList.toggle('show-desktop');
-            e.preventDefault();
-        })
+                    <section id="get">
+                        <h6>READ</h6>
+                        <p>Operatiunea "READ" este folosita pentru obtinerea listei de jocuri, unui singur joc dupa id sau detaliilor pentru fiecare joc.</p>
+                        <pre>
+                        <code>exports.getListGames = function (req, resp) {
+    db.executeSql("SELECT * FROM Games", function (data, err) {                          
+        if (err) {
+            httpMsgs.show500(req, resp, err);
+        }
+        else {
+            httpMsgs.sendJson(req, resp, data);
+        }
+    });
+    };</code>
+                </pre>
+                    </section>
+                    <section id="put">
+                        <h6>UPDATE</h6>
+                        <p>Operatiunea "UPDATE" este utilizata pentru actualizarea detaliile despre un joc din baza de date.</p>
+                        <pre>
+<code>exports.updateGame = function (req, resp, reqBody) {
+    try {
+        if (!reqBody) { throw new Error("Input not valid"); }
+        var data = JSON.parse(reqBody);
+        if (data) {
+            if (!data.Id) throw new Error("Id for game not provided");
+            var sql = "UPDATE Games SET ";
+            var isDataProvided = false;
+            if (data.Name) {
+                sql += " Name = '" + data.Name + "',";
+                isDataProvided = true;
+            }
+            if (data.About) {
+                sql += " About = '" + data.About + "',";
+                isDataProvided = true;
+            }
+            if (data.Rules) {
+                sql += " Rules = '" + data.Rules + "',";
+                isDataProvided = true;
+            }
+            if (data.History) {
+                sql += " History = '" + data.History + "',";
+                isDataProvided = true;
+            }
+            if (isDataProvided) {
+                sql = sql.slice(0, -1);// stergem ultima virgula
+                sql += " WHERE Id = " + data.Id;
+                db.executeSql(sql, function (data, err) {
+                    if (err) {
+                        httpMsgs.show500(req, resp, err);
+                    } else {
+                        httpMsgs.send200(req, resp);
+                    }
+                });
+            }
+        }
+        else {
+            throw new Error("Input not valid");
+        }
+    }
+    catch (ex) {
+        httpMsgs.show500(req, resp, ex);
+    }
+};</code>
+</pre>
+                    </section>
+                    <section id="delete">
+                        <h6>DELETE</h6>
+                        <p>Operatiunea "DELETE" este folosita pentru stergerea unui joc din baza de date.</p>
+                        <pre>
+<code>exports.deleteGame = function (req, resp, reqBody) {
+    try {
+        if (!reqBody) { throw new Error("Input not valid"); }
+        var data = JSON.parse(reqBody);
+        if (data) {
+            if (!data.Id) throw new Error("Id for game not provided");
+            var sql = "DELETE FROM Games ";
+            sql += "WHERE Id = " + data.Id;
+            db.executeSql(sql, function (data, err) {
+                if (err) {
+                    httpMsgs.show500(req, resp, err);
+                } else {
+                    httpMsgs.send200(req, resp);
+                }
+            });
+        }
+        else {
+            throw new Error("Input not valid");
+        }
+    }
+    catch (ex) {
+        httpMsgs.show500(req, resp, ex);
+    }
+};</code>
+</pre>
+                    </section>
+                </section>
+            </section>
+        </section>
+    </section>
+    <section id="webografie">
+        <h2>Webografie</h2>
+        <ul>
+            <li><a href="https://www.youtube.com/watch?v=xT2AvjQ7q9E&list=PLfAuJpWmlQdxg75bRMvcuD8b0R38FEHqX&index=21&t=1076s&fbclid=IwAR2y3onhQvnIqXuhnL61mtTYwtJFpdZZLEjWES2Q58vbGAgI-k_MrYWuwFI">Develop complete REST service app using pure Node.js</a></li>
+            <li><a href="https://www.w3schools.com/nodejs/default.asp">NodeJS Tutorial</a></li>
+            <li><a href="https://www.w3schools.com/html/default.asp">HTML Tutorial</a></li>
+            <li><a href="https://www.w3schools.com/css/default.asp">CSS Tutorial</a></li>
+            <li><a href="https://www.w3schools.com/js/default.asp">Javascript Tutorial</a></li>
+        </ul>
         
-    </script>
+    </section>
 </body>
 </html>
