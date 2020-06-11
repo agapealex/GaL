@@ -1,0 +1,2 @@
+C:\Users\agape\source\repos\GaL\GaL\obj\Debug\GaL.njsprojAssemblyReference.cache
+C:\Users\agape\source\repos\GaL\GaL\bin\Microsoft.NodejsTools.WebRole.dll
